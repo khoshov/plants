@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Список растений{% endblock title %}
+
+{% block content %}
+  {% for plant in plants %}
+    <h2>{{ plant.color }} {{ plant.title }}</h2>
+    <p>Размер: {{ plant.get_size_display }}</p>
+  {% endfor %}
+
+  <a href="{% url 'core:create' %}" class="btn btn-primary">Добавить новое растение</a>
+{% endblock content %}
